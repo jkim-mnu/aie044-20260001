@@ -13,4 +13,4 @@ print(f"{'sensor':<8}{'count':>6}{'min':>8}{'max':>8}{'mean':>8}")
 print("-" * 38)
 for sensor in sorted(values):
     vs = values[sensor]
-    print(f"{sensor:<8}{len(vs):>6}{min(vs):>8.2f}{max(vs):>8.2f}{statistics.mean(vs):>8.2f}")
+    print(f"{sensor:<8}{len(vs):>6}{min(vs):>8.2f}{max(vs):>8.2f}{statistics.mean(vs):>8.1f}")
