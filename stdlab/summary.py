@@ -9,8 +9,8 @@ with Path("data/readings.csv").open(encoding="utf-8") as f:
         t, sensor, v = line.strip().split(",")
         values[sensor].append(float(v))
 
-print(f"{'sensor':<8}{'count':>6}{'min':>8}{'max':>8}{'median':>8}")
-print("-" * 38)
+print(f"{'sensor':<8}{'count':>6}{'min':>8}{'max':>8}{'mean':>8}{'median':>8}")
+print("-" * 46)
 for sensor in sorted(values):
     vs = values[sensor]
-    print(f"{sensor:<8}{len(vs):>6}{min(vs):>8.2f}{max(vs):>8.2f}{statistics.median(vs):>8.2f}")
+    print(f"{sensor:<8}{len(vs):>6}{min(vs):>8.2f}{max(vs):>8.2f}{statistics.mean(vs):>8.2f}{statistics.median(vs):>8.2f}")
